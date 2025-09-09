@@ -4,7 +4,7 @@ include "edit_botton_list.php"; // to funtion edit button
 include "edit_modal.php";   // to show modal
 include "get_rows.php"; // to get $total_assets
 include "delete_asset.php"; // to funtion delete button
-$result = $conn->query("SELECT * FROM bcp_sms4_asset ORDER BY created_at DESC");
+$result = $conn->query("SELECT * FROM bcp_sms4_consumable ORDER BY asset_tag DESC");
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,7 +12,7 @@ $result = $conn->query("SELECT * FROM bcp_sms4_asset ORDER BY created_at DESC");
     <title>Asset List</title>
     <link rel="stylesheet" href="../../../css/table_size.css">
     <link rel="stylesheet" href="../../../css/asset_reg/list_assets.css">
-    <script src="../../../js/asset_reg_tagging/non_consumable/list_assets.js"></script>
+    <script src="../../../js/asset_reg_tagging/consumable/list_assets.js"></script>
     
     <script>
         function searchAssets() {
@@ -25,7 +25,7 @@ $result = $conn->query("SELECT * FROM bcp_sms4_asset ORDER BY created_at DESC");
     </script>
 </head>
 <body>
-    <h2>List Of School Non-Consumable Assets</h2>
+    <h2>List Of School Consumable Assets</h2>
 
     <!-- Show success message if redirected from save -->
     <?php if (isset($_GET['success'])): ?>
@@ -50,10 +50,9 @@ $result = $conn->query("SELECT * FROM bcp_sms4_asset ORDER BY created_at DESC");
                 <th>Tag</th>
                 <th>Name</th>
                 <th>Category</th>
+                <th>Box</th>
                 <th>Quantity</th>
-                <th>Active</th>
-                <th>In Repair</th>
-                <th>Disposed</th>
+                <th>Expiration</th>
                 <th>Date Added</th>
                 <th>Action</th>
 
@@ -65,20 +64,19 @@ $result = $conn->query("SELECT * FROM bcp_sms4_asset ORDER BY created_at DESC");
                     <td><?= $row['asset_tag'] ?></td>
                     <td><?= $row['name'] ?></td>
                     <td><?= $row['category'] ?></td>
+                    <td><?= $row['box'] ?></td>
                     <td><?= $row['quantity'] ?></td>
-                    <td><?= $row['active'] ?></td>
-                    <td><?= $row['in_repair'] ?></td>
-                    <td><?= $row['disposed'] ?></td>
-                    <td><?= $row['purchase_date'] ?></td>
+                    <td><?= $row['expiration'] ?></td>
+                    <td><?= $row['add_date'] ?></td>
                     <td style="display:flex; gap:8px;">
-                    <button class="btn_table"
+                    <button type="button" class="btn_table"
                         data-asset_tag="<?= $row['asset_tag'] ?>"
-                        data-active="<?= $row['active'] ?>"
-                        data-in_repair="<?= $row['in_repair'] ?>" 
-                        data-disposed="<?= $row['disposed'] ?>" 
+                        data-box="<?= $row['box'] ?>"
+                        data-quantity="<?= $row['quantity'] ?>" 
+                        data-expiration="<?= $row['expiration'] ?>" 
                         onclick="openEditModal(this)">
                         Edit
-                    </button> 
+                    </button>
                     <form method="POST" action="delete_asset.php" style="margin:0;" onsubmit="return confirmDelete(this);">
                         <input type="hidden" name="asset_tag" value="<?= $row['asset_tag'] ?>">
                         <button type="submit" class="btn-delete">Drop</button>
