@@ -13,16 +13,8 @@ $result = $conn->query("SELECT * FROM bcp_sms4_consumable ORDER BY asset_tag DES
     <link rel="stylesheet" href="../../../css/table_size.css">
     <link rel="stylesheet" href="../../../css/asset_reg/list_assets.css">
     <script src="../../../js/asset_reg_tagging/consumable/list_assets.js"></script>
+    <script src="../../../js/asset_reg_tagging/search_table.js"></script>
     
-    <script>
-        function searchAssets() {
-            let input = document.getElementById("search").value.toLowerCase();
-            let rows = document.querySelectorAll("table tbody tr");
-            rows.forEach(row => {
-                row.style.display = row.innerText.toLowerCase().includes(input) ? "" : "none";
-            });
-        }
-    </script>
 </head>
 <body>
     <h2>List Of School Consumable Assets</h2>

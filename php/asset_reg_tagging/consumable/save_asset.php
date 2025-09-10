@@ -9,10 +9,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $box = $_POST["box"];
     $quantity = $_POST["quantity"];
     $expiration = $_POST["expiration"];
+    date_default_timezone_set("Asia/Manila"); // Philippines timezone
+    $client_time = date("Y-m-d H:i:s");
 
     // Step 1: Insert asset with NULL tag
-    $sql = "INSERT INTO bcp_sms4_consumable (name, category, box, quantity, expiration, asset_tag) 
-            VALUES ('$name', '$category', '$box', '$quantity', '$expiration', NULL)";
+    $sql = "INSERT INTO bcp_sms4_consumable (name, category, box, quantity, expiration, add_date, asset_tag) 
+            VALUES ('$name', '$category', '$box', '$quantity', '$expiration', '$client_time', NULL)";
 
     if ($conn->query($sql) === TRUE) {
         $id = $conn->insert_id;

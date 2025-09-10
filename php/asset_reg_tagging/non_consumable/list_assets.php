@@ -13,16 +13,8 @@ $result = $conn->query("SELECT * FROM bcp_sms4_asset ORDER BY created_at DESC");
     <link rel="stylesheet" href="../../../css/table_size.css">
     <link rel="stylesheet" href="../../../css/asset_reg/list_assets.css">
     <script src="../../../js/asset_reg_tagging/non_consumable/list_assets.js"></script>
-    
-    <script>
-        function searchAssets() {
-            let input = document.getElementById("search").value.toLowerCase();
-            let rows = document.querySelectorAll("table tbody tr");
-            rows.forEach(row => {
-                row.style.display = row.innerText.toLowerCase().includes(input) ? "" : "none";
-            });
-        }
-    </script>
+    <script src="../../../js/asset_reg_tagging/search_table.js"></script>
+
 </head>
 <body>
     <h2>List Of School Non-Consumable Assets</h2>
@@ -69,7 +61,7 @@ $result = $conn->query("SELECT * FROM bcp_sms4_asset ORDER BY created_at DESC");
                     <td><?= $row['active'] ?></td>
                     <td><?= $row['in_repair'] ?></td>
                     <td><?= $row['disposed'] ?></td>
-                    <td><?= $row['purchase_date'] ?></td>
+                    <td><?= $row['created_at'] ?></td>
                     <td style="display:flex; gap:8px;">
                     <button class="btn_table"
                         data-asset_tag="<?= $row['asset_tag'] ?>"

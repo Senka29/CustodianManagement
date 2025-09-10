@@ -5,6 +5,7 @@
     <title>Asset Registry</title>
     <link rel="stylesheet" href="../../../css/asset_reg/register_asset.css">
     <link rel="stylesheet" href="../../../css/modal.css">
+    <script src="../../../js/get_current_time.js"></script>
 </head>
 <body>
     <h2>Register New Asset</h2>
@@ -16,8 +17,7 @@
         <input type="text" name="name" placeholder="Asset Name" required>
         <input type="text" name="category" placeholder="Category" required>
         <input type="text" name="quantity" placeholder="quantity" required>
-        <input type="date" name="purchase_date" required>
-        <button type="submit">Save Asset</button>
+        <button type="submit" onclick="saveClientTime()" id="status">Save Asset</button>
     </form>
 
     <!-- Success Modal -->

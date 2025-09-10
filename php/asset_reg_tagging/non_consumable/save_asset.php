@@ -7,11 +7,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $category = $_POST["category"];
     $quantity = $_POST["quantity"];
-    $purchase_date = $_POST["purchase_date"];
+    date_default_timezone_set("Asia/Manila"); // Philippines timezone
+    $client_time = date("Y-m-d H:i:s");
 
     // Step 1: Insert asset with NULL tag
-    $sql = "INSERT INTO bcp_sms4_asset (name, category, quantity, purchase_date, asset_tag) 
-            VALUES ('$name', '$category', '$quantity', '$purchase_date', NULL)";
+    $sql = "INSERT INTO bcp_sms4_asset (name, category, quantity, created_at, asset_tag) 
+            VALUES ('$name', '$category', '$quantity', '$client_time', NULL)";
 
     if ($conn->query($sql) === TRUE) {
         $id = $conn->insert_id;

@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $quantity = (int)$_POST['quantity'];
     $expiration = $_POST['expiration'];
 
-    // 🔹 First get the quantity for this asset
+    //  First get the quantity for this asset
     // $sql = "SELECT quantity FROM bcp_sms4_consumable WHERE asset_tag = ?";
     // $stmt = $conn->prepare($sql);
     // $stmt->bind_param("s", $asset_tag);
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //     if ($row = $result->fetch_assoc()) {
 //         $quantity = (int)$row['quantity'];
 
-//         // 🔹 Check if the sum matches
+//         //  Check if the sum matches
 //         if (($active + $in_repair + $disposed) !== $quantity) {
             
 //             renderMessageModal(
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //             exit();
 //         }
 
-        // 🔹 If valid, update
+        //  If valid, update
         $update_sql = "UPDATE bcp_sms4_consumable
                        SET box = ?, quantity = ?, expiration = ?
                        WHERE asset_tag = ?";

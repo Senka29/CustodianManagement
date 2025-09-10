@@ -5,6 +5,7 @@
     <title>Asset Registry</title>
     <link rel="stylesheet" href="../../../css/asset_reg/register_asset.css">
     <link rel="stylesheet" href="../../../css/modal.css">
+    <script src="../../../js/get_current_time.js"></script>
 </head>
 <body>
     <h2>Register New Asset</h2>
@@ -21,7 +22,7 @@
         <input type="number" name="quantity" placeholder="Quantity"><br><br>
         <label class="input1">Expiration Date:</label>
         <input type="date" name="expiration" required>
-        <button type="submit">Save Asset</button>
+        <button type="submit" onclick="saveClientTime()" id="status">Save Asset</button>
     </form>
 
     <!-- Success Modal -->
