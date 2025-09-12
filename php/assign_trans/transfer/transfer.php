@@ -6,26 +6,38 @@ include "transfer_process.php"; // process file
 <head>
   <meta charset="UTF-8">
   <title>Transfer Equipment</title>
-  <link rel="stylesheet" href="../../../css/assign_trans/assign_trans.css">
+  <link rel="stylesheet" href="../../../css/assign_trans/assign/assign_trans.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="/CustodianManagement/js/auto_suggest/assign_trans/search_user.js"></script>
+  <link rel="stylesheet" href="../../../css/auto_suggest/auto_suggest.css">
 </head>
 <body>
   <div class="container">
     <h2>Transfer Equipment</h2>
     <form action="transfer_process.php" method="POST">
       <label>Reference No:</label>
-      <input type="text" name="reference_no" placeholder="Ex: REF-20250910-XYZ12" required>
+      <input type="text" name="reference_no" placeholder="Enter the  Ref that needs to trasfer. Ex: REF-20250910-XYZ12" required>
 
-      <label>New Custodian ID:</label>
-      <input type="text" name="custodian_id" placeholder="Employee ID" required>
+      <label>Quantity:</label>
+      <input type="number" name="quantity" placeholder="Enter Quantity" required>
 
-      <label>New Custodian Name:</label>
-      <input type="text" name="custodian_name" placeholder="Employee Name" required>
+      <label>New Custodian:</label>
+      <input type="text" id="userName" name="name" placeholder="Enter New Custodian Name">
 
-      <label>Remarks:</label>
-      <textarea name="remarks"></textarea>
+      <label>New Employee ID:</label>
+      <input type="text" id="userId" name="user_id" placeholder="Enter Employee ID">
+
+      <label>Department:</label>
+      <input type="text" id="userDept" name="department" placeholder="Enter Department">
+
+      <label>Reason:</label>
+      <textarea name="remarks" placeholder="Enter the Reason why this item needs to transfer..."></textarea>
 
       <button type="submit">Transfer Equipment</button>
     </form>
   </div>
 </body>
 </html>
+

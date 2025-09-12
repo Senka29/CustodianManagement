@@ -12,6 +12,7 @@ include "assign_process.php"; // process file
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
   <script src="/CustodianManagement/js/auto_suggest/assign_trans/search_user.js"></script>
+  <script src="/CustodianManagement/js/auto_suggest/assign_trans/search_asset.js"></script>
   <link rel="stylesheet" href="../../../css/auto_suggest/auto_suggest.css">
   <!-- Your custom JS -->
 </head>
@@ -19,11 +20,11 @@ include "assign_process.php"; // process file
   <div class="container">
     <h2>Assign Equipment</h2>
     <form action="assign_process.php" method="POST">
-      <label>Item Tag:</label>
-      <input type="text" name="equipment_id" placeholder="Enter Item Tag" required>
-
       <label>Item Name:</label>
-      <input type="text" name="equipment_name" placeholder="Enter Item Name" required>
+      <input type="text" id="equipmentName" name="equipment_name" placeholder="Enter Item Name" required>
+
+      <label>Item Tag:</label>
+      <input type="text" id="equipmentId" name="equipment_id" placeholder="Enter Item Tag" required>
 
       <label>Quantity:</label>
       <input type="number" name="quantity" placeholder="Enter Quantity" required>
