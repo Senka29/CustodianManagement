@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="../../../css/asset_reg/modal.css">
+        <link rel="stylesheet" href="../../../../css/asset_reg/modal.css">
 </head>
 
 <?php
-include "../../connect/connection.php"; // main DB connection
+include "../../../connect/connection.php"; // main DB connection
 include "modal.php"; // for modal
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -43,8 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // 2. Always archive old record (with end_date = NOW)
     $sql = "INSERT INTO bcp_sms4_assign_old_history
-        (reference_no, equipment_id, equipment_name, quantity, custodian_id, custodian_name, department_code, assign_date, end_date, remarks, assign_by) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?, ?)";
+        (reference_no, equipment_id, equipment_name, quantity, custodian_id, custodian_name, department_code, assign_date, 
+        end_date, remarks, assign_by, transfer_quan, new_id, new_name, new_dep) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?, ?, '$quantity', '$new_custodian_id', '$new_custodian_name', '$department')";
     $stmtArchive = $conn->prepare($sql);
     $stmtArchive->bind_param(
         "sssissssss",

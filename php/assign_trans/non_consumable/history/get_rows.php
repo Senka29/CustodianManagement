@@ -1,5 +1,5 @@
 <?php
-include "../../connect/connection.php"; // your DB connection
+include "../../../connect/connection.php"; // your DB connection
 
 // Count assets
 $sql = "SELECT COUNT(*) AS total FROM bcp_sms4_assign_history";

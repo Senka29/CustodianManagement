@@ -14,12 +14,18 @@
     <a href="list_assets.php" class="btn">&larr; Back to Asset List</a>
 
     <form method="POST" action="save_asset.php">
-        <input type="text" name="name" placeholder="Asset Name" required>
-        <input type="text" name="category" placeholder="Category" required><br><br>
+        <label class="input1">Item Name:</label>
+        <input type="text" name="name" placeholder="Enter Asset Name" required>
+        <label class="input1">Category:</label>
+        <input type="text" name="category" placeholder="Enter Category" required>
         <p class="input">Note: The box and quantity is optional but if you make 
             a mistake you can just edit it in "List Of School Consumable Assets"</p><br><br>
-        <input type="number" name="box" placeholder="Box">
-        <input type="number" name="quantity" placeholder="Quantity"><br><br>
+        <label class="input1">Box:</label>
+        <input type="number" name="box" placeholder="Enter Box">
+        <label class="input1">Quantity:</label>
+        <input type="number" name="quantity" placeholder="Enter Quantity">
+        <label class="input1">Quantity per box:</label>
+        <input type="number" name="per_box" placeholder="Enter How many Quantity per box"><br><br>
         <label class="input1">Expiration Date:</label>
         <input type="date" name="expiration" required>
         <button type="submit" onclick="saveClientTime()" id="status">Save Asset</button>

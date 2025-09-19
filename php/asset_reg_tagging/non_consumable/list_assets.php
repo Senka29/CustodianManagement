@@ -42,7 +42,7 @@ $result = $conn->query("SELECT * FROM bcp_sms4_asset ORDER BY created_at DESC");
                 <th>Tag</th>
                 <th>Name</th>
                 <th>Category</th>
-                <th>Quantity</th>
+                <th>Available</th>
                 <th>Active</th>
                 <th>In Repair</th>
                 <th>Disposed</th>

@@ -1,5 +1,5 @@
 <?php
-include "../../connect/connection.php"; // DB connection
+include "../../../connect/connection.php"; // DB connection
 header('Content-Type: application/json');
 
 if (isset($_GET['term'])) {

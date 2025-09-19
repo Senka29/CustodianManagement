@@ -5,7 +5,7 @@ $(function () {
   $("#userName").autocomplete({
     source: function (request, response) {
       $.getJSON(
-        "/CustodianManagement/php/auto_suggest/assign_trans/search_user.php",
+        "/CustodianManagement/php/auto_suggest/assign_trans/non_consumable/search_user.php",
         { term: request.term },
         function (data) {
           response(data);

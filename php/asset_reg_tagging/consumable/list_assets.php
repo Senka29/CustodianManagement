@@ -44,6 +44,7 @@ $result = $conn->query("SELECT * FROM bcp_sms4_consumable ORDER BY asset_tag DES
                 <th>Category</th>
                 <th>Box</th>
                 <th>Quantity</th>
+                <th>Quantity Per Box</th>
                 <th>Expiration</th>
                 <th>Date Added</th>
                 <th>Action</th>
@@ -58,6 +59,7 @@ $result = $conn->query("SELECT * FROM bcp_sms4_consumable ORDER BY asset_tag DES
                     <td><?= $row['category'] ?></td>
                     <td><?= $row['box'] ?></td>
                     <td><?= $row['quantity'] ?></td>
+                    <td><?= $row['per_box'] ?></td>
                     <td><?= $row['expiration'] ?></td>
                     <td><?= $row['add_date'] ?></td>
                     <td style="display:flex; gap:8px;">

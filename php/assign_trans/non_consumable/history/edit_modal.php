@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Edit Asset</title>
-    <link rel="stylesheet" href="../../../css/asset_reg/modal.css">
+    <link rel="stylesheet" href="../../../../css/asset_reg/modal.css">
     <script>
         // Function to close modal
         function closeModal(id) {
@@ -24,17 +24,11 @@
             <h2>Edit Asset</h2>
             <p class="input">Note: Here you can change the value base on the input</p>
 
-            <form method="POST" action="edit_botton_list.php">
-                <input type="hidden" name="asset_tag" id="editAssetTag">
-
-                <label class="input1">Box:</label><br><br>
-                <input type="number" name="box" id="editBox"><br><br>
+            <form method="POST" action="history.php">
+                <input type="hidden" name="reference_no" id="editReferenceNo">
 
                 <label class="input1">Quantity:</label><br><br>
                 <input type="number" name="quantity" id="editQuantity"><br><br>
-
-                <label class="input1">Expiration:</label><br><br>
-                <input type="date" name="expiration" id="editExpiration">
 
                 <button type="submit" class="close-btn">Save Changes</button>
             </form>
@@ -48,10 +42,10 @@ if (!function_exists("renderMessageModal")) {
         ?>
         <div id="<?= $id ?>" class="modal" style="display:block;">
             <div class="modal-content">
-                <span class="close" onclick="window.location.href='list_assets.php'">&times;</span>
+                <span class="close" onclick="window.location.href='history.php'">&times;</span>
                 <h2><?= $title ?></h2>
                 <p><?= $message ?></p>
-                <button class="close-btn" onclick="window.location.href='list_assets.php'">OK</button>
+                <button class="close-btn" onclick="window.location.href='history.php'">OK</button>
             </div>
         </div>
         <?php

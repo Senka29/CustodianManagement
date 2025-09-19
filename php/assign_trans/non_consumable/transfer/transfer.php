@@ -6,12 +6,12 @@ include "transfer_process.php"; // process file
 <head>
   <meta charset="UTF-8">
   <title>Transfer Equipment</title>
-  <link rel="stylesheet" href="../../../css/assign_trans/assign/assign_trans.css">
+  <link rel="stylesheet" href="../../../../css/assign_trans/assign/assign_trans.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
   <script src="/CustodianManagement/js/auto_suggest/assign_trans/search_user.js"></script>
-  <link rel="stylesheet" href="../../../css/auto_suggest/auto_suggest.css">
+  <link rel="stylesheet" href="../../../../css/auto_suggest/auto_suggest.css">
 </head>
 <body>
   <div class="container">

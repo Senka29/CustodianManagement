@@ -5,7 +5,7 @@ $(function () {
   $("#equipmentName").autocomplete({
     source: function (request, response) {
       $.getJSON(
-        "/CustodianManagement/php/auto_suggest/assign_trans/search_asset.php",
+        "/CustodianManagement/php/auto_suggest/assign_trans/non_consumable/search_asset.php",
         { term: request.term }, // send input term to backend
         function (data) {
           response(data);

@@ -5,3 +5,4 @@ function searchTable() {
         row.style.display = row.innerText.toLowerCase().includes(input) ? "" : "none";
     });
 }
+
